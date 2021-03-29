@@ -1,0 +1,4 @@
+include ':BaseUtilsCoreLib'
+include ':DesignSystemCoreLib'
+include ':app'
+rootProject.name = "SwipeCards"

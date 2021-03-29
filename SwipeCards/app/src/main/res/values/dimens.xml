@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="sber_pay_payment_logo_image_width">72dp</dimen>
+    <dimen name="sber_pay_payment_logo_image_height">36dp</dimen>
+    <dimen name="sber_pay_payment_auth_image_size">64dp</dimen>
+    <dimen name="sber_pay_payment_card_height">210dp</dimen>
+    <dimen name="sber_pay_payment_card_height_start">20dp</dimen>
+
+    <dimen name="sber_pay_payment_card_corner_radius">16dp</dimen>
+    <dimen name="sber_pay_payment_result_header_margin_top">148dp</dimen>
+    <dimen name="sber_pay_payment_result_header_view_size">82dp</dimen>
+    <dimen name="sber_pay_payment_result_header_view_padding_top">120dp</dimen>
+    <dimen name="sber_pay_payment_balance_value_text_view_min_width">90dp</dimen>
+    <dimen name="sber_pay_payment_tutorial_header_height">160dp</dimen>
+    <dimen name="sber_pay_payment_tutorial_logo_image_width">96dp</dimen>
+    <dimen name="sber_pay_payment_tutorial_logo_image_height">48dp</dimen>
+    <dimen name="sber_pay_payment_bottom_sheet_peek_height_min">100dp</dimen>
+    <dimen name="sber_pay_payment_bottom_sheet_margin_top">80dp</dimen>
+
+    <dimen name="sber_pay_tokenization_loading_image_size">120dp</dimen>
+
+</resources>

@@ -96,7 +96,7 @@
     <Transition
         motion:constraintSetEnd="@+id/end"
         motion:constraintSetStart="@id/start"
-        motion:duration="500">
+        motion:duration="800">
 
         <KeyFrameSet>
 
@@ -108,7 +108,10 @@
 
         <OnSwipe
             app:dragDirection="dragUp"
-            app:touchAnchorId="@id/imageViewTop" />
+            app:onTouchUp="autoCompleteToStart"
+            app:touchAnchorId="@id/imageViewTop"
+            app:touchAnchorSide="top"
+            app:touchRegionId="@id/imageViewTop" />
 
     </Transition>
 </MotionScene>

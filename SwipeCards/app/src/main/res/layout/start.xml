@@ -1,29 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout android:id="@+id/motionLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layoutDescription="@xml/start_scene">
 
-    <View
-        android:id="@+id/view"
+    <ImageView
+        android:id="@+id/imageViewArrow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:srcCompat="@drawable/arrow"
+        android:contentDescription="@string/app_name" />
 
     <View
         android:id="@+id/imageViewTop"
         android:layout_width="match_parent"
         android:layout_height="@dimen/sber_pay_payment_card_height"
         android:background="@drawable/card_background"
-        android:backgroundTint="@android:color/holo_blue_light"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="972dp" />
+        android:backgroundTint="@android:color/holo_orange_light" />
 
     <View
         android:id="@+id/imageViewCenter"
@@ -39,6 +35,22 @@
         android:background="@drawable/card_background"
         android:backgroundTint="@android:color/holo_orange_light" />
 
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_swipe_cards"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="imageViewTop,imageViewCenter,imageViewBottom" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineRV"
         android:layout_width="wrap_content"
@@ -50,10 +62,8 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
         android:visibility="gone"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:layout_editor_absoluteY="129dp"
         tools:listitem="@layout/item_card" />
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

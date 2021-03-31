@@ -31,6 +31,7 @@
             android:layout_marginStart="28dp"
             android:layout_marginTop="20dp"
             motion:layout_constraintTop_toBottomOf="@+id/view" />
+
         <Constraint
             android:id="@+id/imageViewBottom"
             android:layout_width="match_parent"
@@ -41,6 +42,14 @@
             app:pathMotionArc="none"
             app:transitionEasing="linear"
             motion:layout_constraintTop_toBottomOf="@+id/view" />
+
+        <Constraint
+            android:id="@+id/imageViewArrow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/imageViewTop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </ConstraintSet>
 
@@ -90,10 +99,25 @@
             app:layout_constraintTop_toBottomOf="@+id/guidelineRV"
             app:layout_constraintVertical_bias="0.0" />
 
+        <Constraint
+            android:id="@+id/imageViewArrow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:rotationX="180"
+            app:layout_constraintBottom_toTopOf="@+id/imageViewTop"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Constraint
+            android:id="@+id/group_swipe_cards"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
 
     </ConstraintSet>
 
     <Transition
+
         motion:constraintSetEnd="@+id/end"
         motion:constraintSetStart="@id/start"
         motion:duration="800">
@@ -106,10 +130,15 @@
                 app:motionTarget="@+id/recyclerView" />
         </KeyFrameSet>
 
+        <OnClick
+            motion:clickAction="toggle"
+            motion:targetId="@id/imageViewArrow" />
+
         <OnSwipe
             app:dragDirection="dragUp"
+            app:moveWhenScrollAtTop="true"
+            app:nestedScrollFlags="disablePostScroll"
             app:onTouchUp="autoCompleteToStart"
-            app:touchAnchorId="@id/imageViewTop"
             app:touchAnchorSide="top"
             app:touchRegionId="@id/imageViewTop" />
 

@@ -91,7 +91,7 @@
         <Constraint
             android:id="@+id/recyclerView"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:alpha="1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -117,7 +117,7 @@
     </ConstraintSet>
 
     <Transition
-
+        android:id="@+id/transition_swipe_cards"
         motion:constraintSetEnd="@+id/end"
         motion:constraintSetStart="@id/start"
         motion:duration="800">
@@ -136,11 +136,9 @@
 
         <OnSwipe
             app:dragDirection="dragUp"
-            app:moveWhenScrollAtTop="true"
-            app:nestedScrollFlags="disablePostScroll"
             app:onTouchUp="autoCompleteToStart"
-            app:touchAnchorSide="top"
-            app:touchRegionId="@id/imageViewTop" />
+            app:touchAnchorId="@id/imageViewTop"
+            app:touchAnchorSide="top" />
 
     </Transition>
 </MotionScene>

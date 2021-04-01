@@ -9,14 +9,30 @@ import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), MotionLayout.TransitionListener {
+    private lateinit var motionLayout: MotionLayout
+    private lateinit var recyclerView: RecyclerView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.start)
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
+        recyclerView = findViewById(R.id.recyclerView)
         recyclerView.adapter = AdapterN()
-        val motionLayout = findViewById<MotionLayout>(R.id.motionLayout)
-        motionLayout.currentState
+        motionLayout = findViewById(R.id.motionLayout)
+        motionLayout.addTransitionListener(this)
+    }
+
+    override fun onTransitionTrigger(p0: MotionLayout?, p1: Int, p2: Boolean, p3: Float) {
+    }
+
+    override fun onTransitionStarted(p0: MotionLayout?, p1: Int, p2: Int) {
+    }
+
+    override fun onTransitionChange(p0: MotionLayout?, p1: Int, p2: Int, p3: Float) {
+    }
+
+    override fun onTransitionCompleted(p0: MotionLayout?, p1: Int) {
+        recyclerView.scrollToPosition(0)
     }
 }
 

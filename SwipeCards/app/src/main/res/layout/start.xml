@@ -33,17 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/sber_pay_payment_card_height"
         android:background="@drawable/card_background"
-        android:backgroundTint="@android:color/holo_orange_light" />
-
-    <View
-        android:id="@+id/view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:backgroundTint="@android:color/holo_blue_light" />
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/group_swipe_cards"
@@ -57,6 +47,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.24" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/swipeCards"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.88" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"

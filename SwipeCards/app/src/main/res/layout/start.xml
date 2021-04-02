@@ -1,76 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.motion.widget.MotionLayout android:id="@+id/swipe_cards_scene"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layoutDescription="@xml/start_scene">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        android:id="@+id/imageViewArrow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/app_name"
-        app:srcCompat="@drawable/arrow" />
-
-    <View
-        android:id="@+id/imageViewTop"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/sber_pay_payment_card_height"
-        android:background="@drawable/card_background"
-        tools:backgroundTint="@android:color/holo_orange_light" />
-
-    <View
-        android:id="@+id/imageViewCenter"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/sber_pay_payment_card_height"
-        android:background="@drawable/card_background"
-        tools:backgroundTint="@android:color/holo_green_light" />
-
-    <View
-        android:id="@+id/imageViewBottom"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/sber_pay_payment_card_height"
-        android:background="@drawable/card_background"
-        tools:backgroundTint="@android:color/holo_blue_light" />
-
-    <View
-        android:id="@+id/viewClickTargetBottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <View
-        android:id="@+id/viewClickTargetTop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/group_swipe_cards"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:constraint_referenced_ids="imageViewTop,imageViewCenter,imageViewBottom" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideLineBottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.88" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineTop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.24" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <androidx.constraintlayout.motion.widget.MotionLayout android:id="@+id/swipe_cards_scene"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_card" />
+        app:layoutDescription="@xml/start_scene">
 
-</androidx.constraintlayout.motion.widget.MotionLayout>
+        <ImageView
+            android:id="@+id/imageViewArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            app:srcCompat="@drawable/arrow" />
+
+        <View
+            android:id="@+id/imageViewTop"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sber_pay_payment_card_height"
+            android:background="@drawable/card_background"
+            tools:backgroundTint="@android:color/holo_orange_light" />
+
+        <View
+            android:id="@+id/imageViewCenter"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sber_pay_payment_card_height"
+            android:background="@drawable/card_background"
+            tools:backgroundTint="@android:color/holo_green_light" />
+
+        <View
+            android:id="@+id/imageViewBottom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sber_pay_payment_card_height"
+            android:background="@drawable/card_background"
+            tools:backgroundTint="@android:color/holo_blue_light" />
+
+        <View
+            android:id="@+id/viewClickTargetBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:id="@+id/viewClickTargetTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_swipe_cards"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="imageViewTop,imageViewCenter,imageViewBottom" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLineBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.88" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.24" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_card" />
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.swipecards.ViewModelCard" />
+    </data>
+
+</layout>

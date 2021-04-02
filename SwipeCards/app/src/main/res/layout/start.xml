@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.motion.widget.MotionLayout android:id="@+id/motionLayout"
+<androidx.constraintlayout.motion.widget.MotionLayout android:id="@+id/swipe_cards_scene"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,29 +11,39 @@
         android:id="@+id/imageViewArrow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/arrow"
-        android:contentDescription="@string/app_name" />
+        android:contentDescription="@string/app_name"
+        app:srcCompat="@drawable/arrow" />
 
     <View
         android:id="@+id/imageViewTop"
         android:layout_width="match_parent"
         android:layout_height="@dimen/sber_pay_payment_card_height"
         android:background="@drawable/card_background"
-        android:backgroundTint="@android:color/holo_orange_light" />
+        tools:backgroundTint="@android:color/holo_orange_light" />
 
     <View
         android:id="@+id/imageViewCenter"
         android:layout_width="match_parent"
         android:layout_height="@dimen/sber_pay_payment_card_height"
         android:background="@drawable/card_background"
-        android:backgroundTint="@android:color/holo_green_light" />
+        tools:backgroundTint="@android:color/holo_green_light" />
 
     <View
         android:id="@+id/imageViewBottom"
         android:layout_width="match_parent"
         android:layout_height="@dimen/sber_pay_payment_card_height"
         android:background="@drawable/card_background"
-        android:backgroundTint="@android:color/holo_blue_light" />
+        tools:backgroundTint="@android:color/holo_blue_light" />
+
+    <View
+        android:id="@+id/viewClickTargetBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:id="@+id/viewClickTargetTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/group_swipe_cards"
@@ -42,18 +52,18 @@
         app:constraint_referenced_ids="imageViewTop,imageViewCenter,imageViewBottom" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineRV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.24" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/swipeCards"
+        android:id="@+id/guideLineBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.88" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.24" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"

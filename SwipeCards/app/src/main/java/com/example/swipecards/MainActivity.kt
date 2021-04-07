@@ -17,11 +17,13 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var viewClickTargetBottom: View
     private lateinit var viewClickTargetTop: View
+    private lateinit var background: View
 
     private val touchRect: Rect = Rect()
     private val location = IntArray(2)
-    //private val cardsColors = arrayOf(Color.YELLOW);
-    private val cardsColors = arrayOf(Color.YELLOW, Color.BLUE, Color.CYAN, Color.GRAY, Color.MAGENTA);
+
+    //private val cardsColors = arrayOf(Color.YELLOW); //с одной картой
+    private val cardsColors = arrayOf(Color.YELLOW, Color.BLUE, Color.CYAN, Color.GRAY, Color.MAGENTA);//с двумя картами
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,11 +34,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun initViews() {
         recyclerView = findViewById(R.id.recyclerView)
+        background = findViewById(R.id.background_rv_click)
         viewClickTargetBottom = findViewById(R.id.viewClickTargetBottom)
         viewClickTargetTop = findViewById(R.id.viewClickTargetTop)
         recyclerView.adapter = AdapterN(cardsColors) { color: Int, position: Int ->
             motionLayout.transitionToStart()
-            motionLayout.setBackgroundColor(color)
+            background.setBackgroundColor(color)
         }
         motionLayout = findViewById(R.id.swipe_cards_scene)
         initCardColors(cardsColors)
@@ -48,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         val cardBottom: View = findViewById(R.id.imageViewBottom)
         if (cardsColors.size == 1) {
             motionLayout.setTransition(R.id.one_card_start, R.id.one_card_end)
-            motionLayout.setBackgroundColor(cardsColors[0])
+            background.setBackgroundColor(cardsColors[0])
         } else {
             cardTop.backgroundTintList = ColorStateList.valueOf(cardsColors[0])
             cardCenter.backgroundTintList = ColorStateList.valueOf(cardsColors[1])

@@ -57,6 +57,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone" />
+        <Constraint
+            android:id="@+id/background_rv_click"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:alpha="100"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Constraint
+            android:id="@+id/background_swipe"
+            android:alpha="0"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/end">
@@ -136,7 +155,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone" />
+        <Constraint
+            android:id="@+id/background_rv_click"
+            android:alpha="0"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
+        <Constraint
+            android:id="@+id/background_swipe"
+            android:alpha="100"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/one_card_start">
@@ -181,62 +218,62 @@
                 app:motionTarget="@+id/recyclerView" />
         </KeyFrameSet>
 
-       <KeyFrameSet>
+         <KeyFrameSet>
 
-           <KeyAttribute
-               app:framePosition="0"
-               app:motionTarget="@id/background"
-               app:transitionEasing="accelerate">
-               <CustomAttribute
-                   app:attributeName="backgroundColor"
-                   app:customColorValue="@color/white" />
-           </KeyAttribute>
+                 <KeyAttribute
+                     app:framePosition="0"
+                     app:motionTarget="@id/background_swipe"
+                     app:transitionEasing="accelerate">
+                     <CustomAttribute
+                         app:attributeName="backgroundColor"
+                         app:customColorValue="@color/white" />
+                 </KeyAttribute>
 
-            <KeyAttribute
-                app:framePosition="20"
-                app:motionTarget="@id/background"
-                app:transitionEasing="accelerate">
-                <CustomAttribute
-                    app:attributeName="backgroundColor"
-                    app:customColorValue="#e6e6e6" />
-            </KeyAttribute>
+                  <KeyAttribute
+                      app:framePosition="20"
+                      app:motionTarget="@id/background_swipe"
+                      app:transitionEasing="accelerate">
+                      <CustomAttribute
+                          app:attributeName="backgroundColor"
+                          app:customColorValue="#e6e6e6" />
+                  </KeyAttribute>
 
-            <KeyAttribute
-                app:framePosition="40"
-                app:motionTarget="@id/background"
-                app:transitionEasing="accelerate">
-                <CustomAttribute
-                    app:attributeName="backgroundColor"
-                    app:customColorValue="#c9c9c9" />
-            </KeyAttribute>
+                  <KeyAttribute
+                      app:framePosition="40"
+                      app:motionTarget="@id/background_swipe"
+                      app:transitionEasing="accelerate">
+                      <CustomAttribute
+                          app:attributeName="backgroundColor"
+                          app:customColorValue="#c9c9c9" />
+                  </KeyAttribute>
 
-            <KeyAttribute
-                app:framePosition="60"
-                app:motionTarget="@id/background"
-                app:transitionEasing="accelerate">
-                <CustomAttribute
-                    app:attributeName="backgroundColor"
-                    app:customColorValue="#9e9e9e" />
-            </KeyAttribute>
+                  <KeyAttribute
+                      app:framePosition="60"
+                      app:motionTarget="@id/background_swipe"
+                      app:transitionEasing="accelerate">
+                      <CustomAttribute
+                          app:attributeName="backgroundColor"
+                          app:customColorValue="#9e9e9e" />
+                  </KeyAttribute>
 
-            <KeyAttribute
-                app:framePosition="80"
-                app:motionTarget="@id/background"
-                app:transitionEasing="accelerate">
-                <CustomAttribute
-                    app:attributeName="backgroundColor"
-                    app:customColorValue="#878787" />
-            </KeyAttribute>
+                  <KeyAttribute
+                      app:framePosition="80"
+                      app:motionTarget="@id/background_swipe"
+                      app:transitionEasing="accelerate">
+                      <CustomAttribute
+                          app:attributeName="backgroundColor"
+                          app:customColorValue="#878787" />
+                  </KeyAttribute>
 
-            <KeyAttribute
-                app:framePosition="100"
-                app:motionTarget="@id/background"
-                app:transitionEasing="accelerate">
-                <CustomAttribute
-                    app:attributeName="backgroundColor"
-                    app:customColorValue="#707070" />
-            </KeyAttribute>
-        </KeyFrameSet>
+                  <KeyAttribute
+                      app:framePosition="100"
+                      app:motionTarget="@id/background_swipe"
+                      app:transitionEasing="accelerate">
+                      <CustomAttribute
+                          app:attributeName="backgroundColor"
+                          app:customColorValue="#575757" />
+                  </KeyAttribute>
+              </KeyFrameSet>
 
         <OnSwipe
             app:dragDirection="dragUp"

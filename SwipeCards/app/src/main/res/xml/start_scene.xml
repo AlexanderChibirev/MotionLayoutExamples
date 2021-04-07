@@ -181,7 +181,16 @@
                 app:motionTarget="@+id/recyclerView" />
         </KeyFrameSet>
 
-       <!-- <KeyFrameSet>
+       <KeyFrameSet>
+
+           <KeyAttribute
+               app:framePosition="0"
+               app:motionTarget="@id/background"
+               app:transitionEasing="accelerate">
+               <CustomAttribute
+                   app:attributeName="backgroundColor"
+                   app:customColorValue="@color/white" />
+           </KeyAttribute>
 
             <KeyAttribute
                 app:framePosition="20"
@@ -189,7 +198,7 @@
                 app:transitionEasing="accelerate">
                 <CustomAttribute
                     app:attributeName="backgroundColor"
-                    app:customColorDrawableValue="@drawable/sberpay_payment_screen_background_1" />
+                    app:customColorValue="#e6e6e6" />
             </KeyAttribute>
 
             <KeyAttribute
@@ -198,7 +207,7 @@
                 app:transitionEasing="accelerate">
                 <CustomAttribute
                     app:attributeName="backgroundColor"
-                    app:customColorValue="#C3E6E6" />
+                    app:customColorValue="#c9c9c9" />
             </KeyAttribute>
 
             <KeyAttribute
@@ -207,7 +216,7 @@
                 app:transitionEasing="accelerate">
                 <CustomAttribute
                     app:attributeName="backgroundColor"
-                    app:customColorValue="#464E69" />
+                    app:customColorValue="#9e9e9e" />
             </KeyAttribute>
 
             <KeyAttribute
@@ -216,7 +225,7 @@
                 app:transitionEasing="accelerate">
                 <CustomAttribute
                     app:attributeName="backgroundColor"
-                    app:customColorValue="#AF6DA2" />
+                    app:customColorValue="#878787" />
             </KeyAttribute>
 
             <KeyAttribute
@@ -225,9 +234,9 @@
                 app:transitionEasing="accelerate">
                 <CustomAttribute
                     app:attributeName="backgroundColor"
-                    app:customColorValue="#FBBF1D" />
+                    app:customColorValue="#707070" />
             </KeyAttribute>
-        </KeyFrameSet>-->
+        </KeyFrameSet>
 
         <OnSwipe
             app:dragDirection="dragUp"

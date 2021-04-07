@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/app_name"
         app:srcCompat="@drawable/arrow" />
-    
+
     <View
         android:id="@+id/imageViewTop"
         android:layout_width="match_parent"

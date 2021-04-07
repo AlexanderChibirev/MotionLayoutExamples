@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         viewClickTargetTop = findViewById(R.id.viewClickTargetTop)
         recyclerView.adapter = AdapterN(cardsColors) { color: Int, position: Int ->
             motionLayout.transitionToStart()
+            motionLayout.setBackgroundColor(color)
         }
         motionLayout = findViewById(R.id.swipe_cards_scene)
         initCardColors(cardsColors)
@@ -47,6 +48,7 @@ class MainActivity : AppCompatActivity() {
         val cardBottom: View = findViewById(R.id.imageViewBottom)
         if (cardsColors.size == 1) {
             motionLayout.setTransition(R.id.one_card_start, R.id.one_card_end)
+            motionLayout.setBackgroundColor(cardsColors[0])
         } else {
             cardTop.backgroundTintList = ColorStateList.valueOf(cardsColors[0])
             cardCenter.backgroundTintList = ColorStateList.valueOf(cardsColors[1])

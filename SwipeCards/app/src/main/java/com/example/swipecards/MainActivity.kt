@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var viewClickTargetBottom: View
     private lateinit var viewClickTargetTop: View
     private lateinit var background: View
-
     private val touchRect: Rect = Rect()
     private val location = IntArray(2)
 
@@ -37,12 +36,16 @@ class MainActivity : AppCompatActivity() {
         background = findViewById(R.id.background_rv_click)
         viewClickTargetBottom = findViewById(R.id.viewClickTargetBottom)
         viewClickTargetTop = findViewById(R.id.viewClickTargetTop)
+        motionLayout = findViewById(R.id.swipe_cards_scene)
+        initRvItemClick()
+        initCardColors(cardsColors)
+    }
+
+    private fun initRvItemClick() {
         recyclerView.adapter = AdapterN(cardsColors) { color: Int, position: Int ->
             motionLayout.transitionToStart()
             background.setBackgroundColor(color)
         }
-        motionLayout = findViewById(R.id.swipe_cards_scene)
-        initCardColors(cardsColors)
     }
 
     private fun initCardColors(cardsColors: Array<Int>) {

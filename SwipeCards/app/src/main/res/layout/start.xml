@@ -34,19 +34,13 @@
         app:srcCompat="@drawable/arrow" />
 
     <include layout="@layout/sber_pay_payment_card_list_item"
-        android:id="@+id/imageViewTop"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/sber_pay_payment_card_height" />
+        android:id="@+id/imageViewTop"/>
 
     <include layout="@layout/sber_pay_payment_card_list_item"
-        android:id="@+id/imageViewCenter"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/sber_pay_payment_card_height"/>
+        android:id="@+id/imageViewCenter"/>
 
     <include layout="@layout/sber_pay_payment_card_list_item"
-        android:id="@+id/imageViewBottom"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/sber_pay_payment_card_height"/>
+        android:id="@+id/imageViewBottom"/>
 
     <View
         android:id="@+id/viewClickTargetBottom"
@@ -69,7 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.88" />
+        app:layout_constraintGuide_percent="0.86" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineTop"
@@ -84,6 +78,6 @@
         android:layout_height="match_parent"
         android:visibility="gone"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_card" />
+        tools:listitem="@layout/sber_pay_payment_card_list_item" />
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

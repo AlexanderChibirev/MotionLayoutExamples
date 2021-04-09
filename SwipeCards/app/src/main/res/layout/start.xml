@@ -7,13 +7,6 @@
     android:layout_height="match_parent"
     app:layoutDescription="@xml/start_scene">
 
-    <ImageView
-        android:id="@+id/imageViewArrow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/app_name"
-        app:srcCompat="@drawable/arrow" />
-
     <View
         android:id="@+id/background_rv_click"
         android:layout_width="0dp"
@@ -33,6 +26,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/imageViewArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/app_name"
+        app:srcCompat="@drawable/arrow" />
+
     <include layout="@layout/sber_pay_payment_card_list_item"
         android:id="@+id/imageViewTop"
         android:layout_width="match_parent"
@@ -47,20 +47,6 @@
         android:id="@+id/imageViewBottom"
         android:layout_width="match_parent"
         android:layout_height="@dimen/sber_pay_payment_card_height"/>
-
-    <!--<View
-        android:id="@+id/imageViewCenter"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/sber_pay_payment_card_height"
-        android:background="@drawable/card_background"
-        tools:backgroundTint="@android:color/holo_green_light" />
-
-    <View
-        android:id="@+id/imageViewBottom"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/sber_pay_payment_card_height"
-        android:background="@drawable/card_background"
-        tools:backgroundTint="@android:color/holo_blue_light" />-->
 
     <View
         android:id="@+id/viewClickTargetBottom"

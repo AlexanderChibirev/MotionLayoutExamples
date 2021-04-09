@@ -1,8 +1,6 @@
 package com.example.swipecards
 
-import android.graphics.Rect
 import android.os.Bundle
-import android.view.MotionEvent
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
@@ -15,14 +13,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var motionLayout: MotionLayout
     private lateinit var recyclerView: RecyclerView
 
-    private lateinit var viewClickTargetBottom: View
-    private lateinit var viewClickTargetTop: View
     private lateinit var background: View
-    private val touchRect: Rect = Rect()
-    private val location = IntArray(2)
 
-    //private val cardsColors = arrayOf(Color.YELLOW); //с одной картой
-    // private val cardsColors = arrayOf(Color.YELLOW, Color.BLUE, Color.CYAN, Color.GRAY, Color.MAGENTA);//с двумя картами
     private val cardsColors = arrayOf(
         R.drawable.sberpay_payment_screen_background_2,
         R.drawable.sberpay_payment_screen_background_3,
@@ -50,8 +42,6 @@ class MainActivity : AppCompatActivity() {
     private fun initViews() {
         recyclerView = findViewById(R.id.recyclerView)
         background = findViewById(R.id.background_rv_click)
-        viewClickTargetBottom = findViewById(R.id.viewClickTargetBottom)
-        viewClickTargetTop = findViewById(R.id.viewClickTargetTop)
         motionLayout = findViewById(R.id.swipe_cards_scene)
         initRvItemClick()
         initCardColors(cardsColors)
@@ -84,31 +74,5 @@ class MainActivity : AppCompatActivity() {
                 recyclerView.scrollToPosition(0)
             }
         })
-    }
-
-    override fun dispatchTouchEvent(ev: MotionEvent): Boolean {
-        if (cardsColors.size != 1) {
-            val bottomClick = isViewInBounds(viewClickTargetBottom, ev.x.toInt(), ev.y.toInt())
-            val topClick = isViewInBounds(viewClickTargetTop, ev.x.toInt(), ev.y.toInt())
-            if (bottomClick || topClick) {
-                when (ev.action) {
-                    MotionEvent.ACTION_UP -> {
-                        if (bottomClick) {
-                            motionLayout.transitionToEnd()
-                        } else if (topClick) {
-                            motionLayout.transitionToStart()
-                        }
-                    }
-                }
-            }
-        }
-        return super.dispatchTouchEvent(ev)
-    }
-
-    private fun isViewInBounds(view: View, x: Int, y: Int): Boolean {
-        view.getDrawingRect(touchRect)
-        view.getLocationOnScreen(location)
-        touchRect.offset(location[0], location[1])
-        return touchRect.contains(x, y)
     }
 }

@@ -129,11 +129,11 @@
             android:id="@+id/imageViewArrow"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:rotationX="180"
             app:layout_constraintBottom_toTopOf="@+id/imageViewTop"
             app:layout_constraintEnd_toStartOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginBottom="8dp" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Constraint
             android:id="@+id/group_swipe_cards"
@@ -203,14 +203,10 @@
         motion:duration="500">
 
         <KeyFrameSet>
-
             <KeyAttribute
                 android:alpha="0"
                 app:framePosition="99"
                 app:motionTarget="@+id/recyclerView" />
-        </KeyFrameSet>
-
-        <KeyFrameSet>
 
             <KeyAttribute
                 app:framePosition="0"
@@ -230,6 +226,10 @@
                     app:customColorValue="#575757" />
             </KeyAttribute>
         </KeyFrameSet>
+
+        <OnClick
+            motion:targetId="@id/imageViewArrow"
+            motion:clickAction="toggle" />
 
         <OnSwipe
             app:dragDirection="dragUp"

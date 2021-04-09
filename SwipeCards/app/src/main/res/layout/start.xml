@@ -42,16 +42,6 @@
     <include layout="@layout/sber_pay_payment_card_list_item"
         android:id="@+id/imageViewBottom"/>
 
-    <View
-        android:id="@+id/viewClickTargetBottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <View
-        android:id="@+id/viewClickTargetTop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
     <androidx.constraintlayout.widget.Group
         android:id="@+id/group_swipe_cards"
         android:layout_width="wrap_content"

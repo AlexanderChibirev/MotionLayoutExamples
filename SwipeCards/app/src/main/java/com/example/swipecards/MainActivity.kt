@@ -1,7 +1,5 @@
 package com.example.swipecards
 
-import android.content.res.ColorStateList
-import android.graphics.Color
 import android.graphics.Rect
 import android.os.Bundle
 import android.view.MotionEvent
@@ -9,6 +7,8 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.constraintlayout.motion.widget.TransitionAdapter
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
@@ -22,7 +22,23 @@ class MainActivity : AppCompatActivity() {
     private val location = IntArray(2)
 
     //private val cardsColors = arrayOf(Color.YELLOW); //с одной картой
-    private val cardsColors = arrayOf(Color.YELLOW, Color.BLUE, Color.CYAN, Color.GRAY, Color.MAGENTA);//с двумя картами
+    // private val cardsColors = arrayOf(Color.YELLOW, Color.BLUE, Color.CYAN, Color.GRAY, Color.MAGENTA);//с двумя картами
+    private val cardsColors = arrayOf(
+        R.drawable.sberpay_payment_screen_background_2,
+        R.drawable.sberpay_payment_screen_background_3,
+        R.drawable.sberpay_payment_screen_background_4,
+        R.drawable.sberpay_payment_screen_background_5,
+        R.drawable.sberpay_payment_screen_background_6,
+        R.drawable.sberpay_payment_screen_background_7,
+        R.drawable.sberpay_payment_screen_background_8,
+        R.drawable.sberpay_payment_screen_background_9,
+        R.drawable.sberpay_payment_screen_background_10,
+        R.drawable.sberpay_payment_screen_background_11,
+        R.drawable.sberpay_payment_screen_background_12,
+        R.drawable.sberpay_payment_screen_background_13,
+        R.drawable.sberpay_payment_screen_background_14,
+        R.drawable.sberpay_payment_screen_background_15
+    );//с двумя картами
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,21 +60,21 @@ class MainActivity : AppCompatActivity() {
     private fun initRvItemClick() {
         recyclerView.adapter = AdapterN(cardsColors) { color: Int, position: Int ->
             motionLayout.transitionToStart()
-            background.setBackgroundColor(color)
+            background.background = (ContextCompat.getDrawable(this, color))
         }
     }
 
     private fun initCardColors(cardsColors: Array<Int>) {
-        val cardTop: View = findViewById(R.id.imageViewTop)
-        val cardCenter: View = findViewById(R.id.imageViewCenter)
-        val cardBottom: View = findViewById(R.id.imageViewBottom)
         if (cardsColors.size == 1) {
             motionLayout.setTransition(R.id.one_card_start, R.id.one_card_end)
             background.setBackgroundColor(cardsColors[0])
         } else {
-            cardTop.backgroundTintList = ColorStateList.valueOf(cardsColors[0])
-            cardCenter.backgroundTintList = ColorStateList.valueOf(cardsColors[1])
-            cardBottom.backgroundTintList = ColorStateList.valueOf(cardsColors[2])
+            val cardTop: ConstraintLayout = findViewById<View>(R.id.imageViewTop).findViewById(R.id.front_card_content)
+            val cardCenter: ConstraintLayout = findViewById<View>(R.id.imageViewCenter).findViewById(R.id.front_card_content)
+            val cardBottom: ConstraintLayout = findViewById<View>(R.id.imageViewBottom).findViewById(R.id.front_card_content)
+            cardTop.background = ContextCompat.getDrawable(this, cardsColors[0])
+            cardCenter.background = ContextCompat.getDrawable(this, cardsColors[1])
+            cardBottom.background = ContextCompat.getDrawable(this, cardsColors[2])
         }
     }
 

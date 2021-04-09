@@ -19,4 +19,179 @@
 
     <dimen name="sber_pay_tokenization_loading_image_size">120dp</dimen>
 
+    <!-- Paddings -->
+    <dimen name="no_padding">0dp</dimen>
+    <dimen name="padding_tiny">2dp</dimen>
+    <dimen name="padding_xxxsmall">4dp</dimen>
+    <dimen name="padding_xxsmall">6dp</dimen>
+    <dimen name="padding_xsmall">8dp</dimen>
+    <dimen name="padding_small">10dp</dimen>
+    <dimen name="padding_medium_small">12dp</dimen>
+    <dimen name="padding_xmedium_small">14dp</dimen>
+    <dimen name="padding_medium">16dp</dimen>
+    <dimen name="padding_medium_large">20dp</dimen>
+    <dimen name="padding_xxmedium_large">24dp</dimen>
+    <dimen name="padding_xxxmedium_large">28dp</dimen>
+    <dimen name="padding_large">32dp</dimen>
+    <dimen name="padding_large_x">40dp</dimen>
+    <dimen name="padding_large_xx">44dp</dimen>
+    <dimen name="padding_large_xxx">48dp</dimen>
+    <dimen name="padding_xlarge">56dp</dimen>
+    <dimen name="padding_xxlarge">60dp</dimen>
+    <dimen name="padding_xxxlarge">64dp</dimen>
+    <dimen name="padding_xxxxlarge">68dp</dimen>
+    <dimen name="padding_giant">72dp</dimen>
+    <dimen name="padding_giant_xx">80dp</dimen>
+    <dimen name="padding_giant_comment">60dp</dimen>
+
+    <!-- Margins -->
+    <dimen name="no_margin">0dp</dimen>
+    <dimen name="margin_tiny">2dp</dimen>
+    <dimen name="margin_xxxsmall">4dp</dimen>
+    <dimen name="margin_xxsmall">6dp</dimen>
+    <dimen name="margin_xsmall">8dp</dimen>
+    <dimen name="margin_small">10dp</dimen>
+    <dimen name="margin_medium_small">12dp</dimen>
+    <dimen name="margin_xmedium_small">14dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_medium_large">20dp</dimen>
+    <dimen name="margin_xmedium_large">22dp</dimen>
+    <dimen name="margin_xxmedium_large">24dp</dimen>
+    <dimen name="margin_xxxmedium_large">28dp</dimen>
+    <dimen name="margin_large">32dp</dimen>
+    <dimen name="margin_large_x">36dp</dimen>
+    <dimen name="margin_large_xx">40dp</dimen>
+    <dimen name="margin_large_xxx">48dp</dimen>
+    <dimen name="margin_large_xxxx">52dp</dimen>
+    <dimen name="margin_xlarge">56dp</dimen>
+    <dimen name="margin_xxlarge">60dp</dimen>
+    <dimen name="margin_xxxlarge">64dp</dimen>
+    <dimen name="margin_xxxlarge_x">66dp</dimen>
+    <dimen name="margin_xxxxlarge">68dp</dimen>
+    <dimen name="margin_giant">72dp</dimen>
+
+    <!--Text dimens-->
+    <dimen name="text_size_headline1">32sp</dimen>
+    <dimen name="text_size_headline2">24sp</dimen>
+    <dimen name="text_size_title">20sp</dimen>
+    <dimen name="text_size_body">16sp</dimen>
+    <dimen name="text_size_footnote">14sp</dimen>
+    <dimen name="text_size_button">14sp</dimen>
+    <dimen name="text_size_caption">12sp</dimen>
+
+    <!-- Line Spacing Extra -->
+    <dimen name="line_spacing_extra_tiny">2sp</dimen>
+    <dimen name="line_spacing_extra_xxxsmall">4sp</dimen>
+
+    <!-- Alerts -->
+    <dimen name="alert_width_in_percent">95%</dimen>
+
+    <!--Размеры текста, отвязанные от размера шрифта на устройстве; используется в Toolbar, CountDownTimerView и AppWidget-ах-->
+    <dimen name="text_size_headline1_dp">32dp</dimen>
+    <dimen name="text_size_headline2_dp">24dp</dimen>
+    <dimen name="text_size_title_dp">20dp</dimen>
+    <dimen name="text_size_body_dp">16dp</dimen>
+    <dimen name="text_size_footnote_dp">14dp</dimen>
+    <dimen name="text_size_caption_dp">12dp</dimen>
+
+    <!-- Buttons -->
+    <dimen name="button_padding_horizontal">8dp</dimen>
+    <dimen name="button_padding_horizontal_large">16dp</dimen>
+    <dimen name="button_padding_vertical">6dp</dimen>
+    <dimen name="button_padding_vertical_large">10dp</dimen>
+    <dimen name="button_elevation">0dp</dimen>
+    <dimen name="button_min_dimension">48dp</dimen>
+    <dimen name="button_height">60dp</dimen>
+    <dimen name="button_pickle_height">36dp</dimen>
+
+    <!-- AppBar -->
+    <dimen name="action_bar_size">56dp</dimen>
+    <dimen name="expanded_app_bar_size">160dp</dimen>
+    <dimen name="extended_sub_bar_size">80dp</dimen>
+    <dimen name="status_bar_height">24dp</dimen>
+    <dimen name="action_bar_with_status_bar_size">80dp</dimen>
+
+    <!-- BottomNavigation -->
+    <dimen name="bottom_navigation_elevation">8dp</dimen>
+
+    <!-- SPACER -->
+    <dimen name="spacer_8">8dp</dimen>
+    <dimen name="spacer_16">16dp</dimen>
+    <dimen name="spacer_24">24dp</dimen>
+    <dimen name="spacer_32">32dp</dimen>
+    <dimen name="spacer_64">64dp</dimen>
+
+    <!-- Dividers -->
+    <dimen name="divider_fat">8dp</dimen>
+    <dimen name="divider_large">16dp</dimen>
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="divider_drawable_height">2dp</dimen>
+    <dimen name="divider_width">1dp</dimen>
+
+    <dimen name="divider_dotted_line_dash_width">1dp</dimen>
+    <dimen name="divider_dotted_line_dash_gap">4dp</dimen>
+    <dimen name="divider_dotted_line_width">1dp</dimen>
+
+    <!-- Icons -->
+    <dimen name="icon_size">24dp</dimen>
+    <dimen name="icon_size_large">36dp</dimen>
+    <dimen name="icon_size_extra_large">56dp</dimen>
+    <dimen name="icon_size_giant">64dp</dimen>
+    <dimen name="icon_size_container">40dp</dimen>
+    <dimen name="contacts_avatar_size">40dp</dimen>
+
+    <!-- Elevation -->
+    <dimen name="elevation_zero">0dp</dimen>
+    <dimen name="elevation_tiny">2dp</dimen>
+    <dimen name="elevation_medium">4dp</dimen>
+    <dimen name="elevation_medium_large">8dp</dimen>
+
+    <!-- Corners radius (еще поменяются)-->
+    <dimen name="corner_radius_xs">2dp</dimen>
+    <dimen name="corner_radius_s">4dp</dimen>
+    <dimen name="corner_radius_m">6dp</dimen>
+    <dimen name="corner_radius_l">8dp</dimen>
+    <dimen name="corner_radius_xl">10dp</dimen>
+    <dimen name="corner_radius_xxl">12dp</dimen>
+    <dimen name="corner_radius_g">16dp</dimen>
+
+    <!-- Progress Bar -->
+    <dimen name="progress_bar_drawable_height">2dp</dimen>
+    <dimen name="progress_bar_size_regular">48dp</dimen>
+    <dimen name="progress_bar_size_small">26dp</dimen>
+    <dimen name="count_down_timer_view_size">24dp</dimen>
+
+    <!-- Размеры ячеек списка -->
+    <dimen name="list_item_preferred_height_small">48dp</dimen>
+    <dimen name="list_item_preferred_height">64dp</dimen>
+    <dimen name="list_item_preferred_height_large">80dp</dimen>
+    <dimen name="list_item_preferred_height_extra_large">104dp</dimen>
+    <dimen name="list_item_preferred_height_giant">112dp</dimen>
+
+    <!-- -->
+    <dimen name="standard_horizontal_margin">16dp</dimen>
+    <dimen name="min_stroke_width">1dp</dimen>
+    <dimen name="medium_stroke_width">2dp</dimen>
+
+    <dimen name="logo_size_small">80dp</dimen>
+
+    <!-- Размеры для индикаторов страниц -->
+    <dimen name="page_indicator_height_small">4dp</dimen>
+    <dimen name="page_indicator_height_normal">6dp</dimen>
+    <dimen name="page_indicator_height_large">8dp</dimen>
+
+    <dimen name="page_indicator_spacing_xxsmall">1dp</dimen>
+    <dimen name="page_indicator_spacing_xsmall">4dp</dimen>
+    <dimen name="page_indicator_spacing_small">8dp</dimen>
+    <dimen name="page_indicator_spacing_normal">10dp</dimen>
+    <dimen name="page_indicator_spacing_large">12dp</dimen>
+    <dimen name="page_indicator_spacing_xlarge">16dp</dimen>
+
+    <dimen name="page_indicator_stroke_normal">1dp</dimen>
+
+    <!-- Switch -->
+    <dimen name="switch_track_width">40dp</dimen>
+    <dimen name="switch_track_height">20dp</dimen>
+    <dimen name="switch_thumb_size">16dp</dimen>
+
 </resources>

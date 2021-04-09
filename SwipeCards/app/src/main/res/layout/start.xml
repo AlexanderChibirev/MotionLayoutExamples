@@ -7,11 +7,18 @@
     android:layout_height="match_parent"
     app:layoutDescription="@xml/start_scene">
 
+    <ImageView
+        android:id="@+id/imageViewArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/app_name"
+        app:srcCompat="@drawable/arrow" />
+
     <View
         android:id="@+id/background_rv_click"
         android:layout_width="0dp"
-        android:background="@drawable/sberpay_payment_screen_background_1"
         android:layout_height="0dp"
+        android:background="@drawable/sberpay_payment_screen_background_1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,21 +33,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageViewArrow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/app_name"
-        app:srcCompat="@drawable/arrow" />
-
-    <View
+    <include layout="@layout/sber_pay_payment_card_list_item"
         android:id="@+id/imageViewTop"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/sber_pay_payment_card_height"
-        android:background="@drawable/card_background"
-        tools:backgroundTint="@android:color/holo_orange_light" />
+        android:layout_height="@dimen/sber_pay_payment_card_height" />
 
-    <View
+    <include layout="@layout/sber_pay_payment_card_list_item"
+        android:id="@+id/imageViewCenter"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/sber_pay_payment_card_height"/>
+
+    <include layout="@layout/sber_pay_payment_card_list_item"
+        android:id="@+id/imageViewBottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/sber_pay_payment_card_height"/>
+
+    <!--<View
         android:id="@+id/imageViewCenter"
         android:layout_width="match_parent"
         android:layout_height="@dimen/sber_pay_payment_card_height"
@@ -52,7 +60,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/sber_pay_payment_card_height"
         android:background="@drawable/card_background"
-        tools:backgroundTint="@android:color/holo_blue_light" />
+        tools:backgroundTint="@android:color/holo_blue_light" />-->
 
     <View
         android:id="@+id/viewClickTargetBottom"

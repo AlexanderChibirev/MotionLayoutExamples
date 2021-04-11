@@ -64,8 +64,8 @@ class MainActivity : AppCompatActivity() {
                 background.background = (ContextCompat.getDrawable(this, color))
             }
         }
-        //recyclerView.addItemDecoration(ItemDecorator())
-        //recyclerView.post { recyclerView.invalidateItemDecorations() }
+        recyclerView.addItemDecoration(ItemDecorator())
+        recyclerView.post { recyclerView.invalidateItemDecorations() }
     }
 
     private fun initCardColors(cardsColors: Array<Int>) {

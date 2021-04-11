@@ -7,7 +7,6 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.constraintlayout.motion.widget.TransitionAdapter
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
@@ -20,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var background: View
     private val touchRect: Rect = Rect()
     private val location = IntArray(2)
+    private var slideOffsetOld = 0f
 
     //private val cardsColors = arrayOf(Color.YELLOW); //с одной картой
     // private val cardsColors = arrayOf(Color.YELLOW, Color.BLUE, Color.CYAN, Color.GRAY, Color.MAGENTA);//с двумя картами
@@ -59,31 +59,51 @@ class MainActivity : AppCompatActivity() {
 
     private fun initRvItemClick() {
         recyclerView.adapter = AdapterN(cardsColors) { color: Int, position: Int ->
-            motionLayout.transitionToStart()
-            background.background = (ContextCompat.getDrawable(this, color))
+            if (motionLayout.progress == EXPANDED_RECYCLER_VIEW) {
+                motionLayout.transitionToStart()
+                background.background = (ContextCompat.getDrawable(this, color))
+            }
         }
+        //recyclerView.addItemDecoration(ItemDecorator())
+        //recyclerView.post { recyclerView.invalidateItemDecorations() }
     }
 
     private fun initCardColors(cardsColors: Array<Int>) {
         if (cardsColors.size == 1) {
             motionLayout.setTransition(R.id.one_card_start, R.id.one_card_end)
             background.setBackgroundColor(cardsColors[0])
-        } else {
-            val cardTop: ConstraintLayout = findViewById<View>(R.id.imageViewTop).findViewById(R.id.front_card_content)
-            val cardCenter: ConstraintLayout = findViewById<View>(R.id.imageViewCenter).findViewById(R.id.front_card_content)
-            val cardBottom: ConstraintLayout = findViewById<View>(R.id.imageViewBottom).findViewById(R.id.front_card_content)
-            cardTop.background = ContextCompat.getDrawable(this, cardsColors[0])
-            cardCenter.background = ContextCompat.getDrawable(this, cardsColors[1])
-            cardBottom.background = ContextCompat.getDrawable(this, cardsColors[2])
         }
     }
 
     private fun initSetTransitionListener() {
         motionLayout.setTransitionListener(object : TransitionAdapter() {
+            override fun onTransitionChange(motionLayout: MotionLayout?, startId: Int, endId: Int, progress: Float) {
+                slideOffsetOld = progress
+                recyclerView.invalidateItemDecorations()
+                super.onTransitionChange(motionLayout, startId, endId, progress)
+            }
+
             override fun onTransitionCompleted(motionLayout: MotionLayout, currentId: Int) {
                 recyclerView.scrollToPosition(0)
             }
         })
+    }
+
+    /**
+     * Декоратор для схлопывания и развертывания карт при скроллинге нижнего листа
+     */
+    private inner class ItemDecorator : RecyclerView.ItemDecoration() {
+
+        override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
+            val position = parent.getChildAdapterPosition(view)
+            val inverse = MAX_SLIDE - slideOffsetOld
+            // если slideOffsetOld 1, то накладывания карт друг на друга не будет
+            val top = -(view.measuredHeight - ((view.measuredHeight / 100) * PERCENT_CARDS_OVERLAP)) * inverse
+            outRect.top = top.toInt()
+            /*    Log.d("slideOffsetOld  ", "slideOffsetOld: ${slideOffsetOld}")
+                Log.d("getChildAdapterPosition ", "position: ${position}")
+                Log.d("ItemDecorator ", "top: ${outRect.top}")*/
+        }
     }
 
     override fun dispatchTouchEvent(ev: MotionEvent): Boolean {
@@ -110,5 +130,11 @@ class MainActivity : AppCompatActivity() {
         view.getLocationOnScreen(location)
         touchRect.offset(location[0], location[1])
         return touchRect.contains(x, y)
+    }
+
+    companion object {
+        private const val MAX_SLIDE = 1f
+        private const val EXPANDED_RECYCLER_VIEW = 1f
+        private const val PERCENT_CARDS_OVERLAP = 2
     }
 }

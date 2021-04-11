@@ -33,15 +33,6 @@
         android:contentDescription="@string/app_name"
         app:srcCompat="@drawable/arrow" />
 
-    <include layout="@layout/sber_pay_payment_card_list_item"
-        android:id="@+id/imageViewTop"/>
-
-    <include layout="@layout/sber_pay_payment_card_list_item"
-        android:id="@+id/imageViewCenter"/>
-
-    <include layout="@layout/sber_pay_payment_card_list_item"
-        android:id="@+id/imageViewBottom"/>
-
     <View
         android:id="@+id/viewClickTargetBottom"
         android:layout_width="wrap_content"
@@ -51,12 +42,6 @@
         android:id="@+id/viewClickTargetTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/group_swipe_cards"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:constraint_referenced_ids="imageViewTop,imageViewCenter,imageViewBottom" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideLineBottom"

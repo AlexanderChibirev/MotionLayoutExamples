@@ -59,8 +59,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun initRvItemClick() {
         recyclerView.adapter = AdapterN(cardsColors) { color: Int, position: Int ->
-            motionLayout.transitionToStart()
-            background.background = (ContextCompat.getDrawable(this, color))
+            if (motionLayout.progress == EXPANDED_RECYCLER_VIEW) {
+                motionLayout.transitionToStart()
+                background.background = (ContextCompat.getDrawable(this, color))
+            }
         }
     }
 
@@ -110,5 +112,10 @@ class MainActivity : AppCompatActivity() {
         view.getLocationOnScreen(location)
         touchRect.offset(location[0], location[1])
         return touchRect.contains(x, y)
+    }
+    companion object {
+        private const val MAX_SLIDE = 1f
+        private const val EXPANDED_RECYCLER_VIEW = 1f
+        private const val PERCENT_CARDS_OVERLAP = 2
     }
 }

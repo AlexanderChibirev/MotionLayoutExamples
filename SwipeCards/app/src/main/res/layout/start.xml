@@ -26,6 +26,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/sber_pay_payment_card_list_item" />
+
     <ImageView
         android:id="@+id/imageViewArrow"
         android:layout_width="wrap_content"
@@ -72,12 +79,5 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.24" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/sber_pay_payment_card_list_item" />
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

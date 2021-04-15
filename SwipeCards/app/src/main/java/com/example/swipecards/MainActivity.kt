@@ -71,10 +71,8 @@ class MainActivity : AppCompatActivity() {
         } else {
             val cardTop: ConstraintLayout = findViewById<View>(R.id.imageViewTop).findViewById(R.id.front_card_content)
             val cardCenter: ConstraintLayout = findViewById<View>(R.id.imageViewCenter).findViewById(R.id.front_card_content)
-            val cardBottom: ConstraintLayout = findViewById<View>(R.id.imageViewBottom).findViewById(R.id.front_card_content)
             cardTop.background = ContextCompat.getDrawable(this, cardsColors[0])
             cardCenter.background = ContextCompat.getDrawable(this, cardsColors[1])
-            cardBottom.background = ContextCompat.getDrawable(this, cardsColors[2])
         }
     }
 

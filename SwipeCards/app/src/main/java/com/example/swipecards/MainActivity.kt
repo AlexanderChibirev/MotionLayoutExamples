@@ -2,12 +2,17 @@ package com.example.swipecards
 
 import android.graphics.Rect
 import android.os.Bundle
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
+import android.view.ViewGroup.MarginLayoutParams
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.constraintlayout.motion.widget.TransitionAdapter
 import androidx.core.content.ContextCompat
+import androidx.core.view.marginBottom
+import androidx.core.view.marginLeft
+import androidx.core.view.marginRight
 import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
@@ -60,6 +65,7 @@ class MainActivity : AppCompatActivity() {
     private fun initRvItemClick() {
         recyclerView.adapter = AdapterN(cardsColors) { color: Int, position: Int ->
             if (motionLayout.progress == EXPANDED_RECYCLER_VIEW) {
+                //recyclerView.scrollToPosition(0)
                 motionLayout.transitionToStart()
                 background.background = (ContextCompat.getDrawable(this, color))
             }
@@ -94,15 +100,32 @@ class MainActivity : AppCompatActivity() {
      */
     private inner class ItemDecorator : RecyclerView.ItemDecoration() {
 
+        private fun setMargins(view: View, left: Int, top: Int, right: Int, bottom: Int) {
+            if (view.layoutParams is MarginLayoutParams) {
+                val p = view.layoutParams as MarginLayoutParams
+                p.setMargins(left, top, right, bottom)
+                view.requestLayout()
+            }
+        }
+
         override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
-            val position = parent.getChildAdapterPosition(view)
+            val position = parent.getChildLayoutPosition(view)
             val inverse = MAX_SLIDE - slideOffsetOld
             // если slideOffsetOld 1, то накладывания карт друг на друга не будет
-            val top = -(view.measuredHeight - ((view.measuredHeight / 100) * PERCENT_CARDS_OVERLAP)) * inverse
-            outRect.top = top.toInt()
-            /*    Log.d("slideOffsetOld  ", "slideOffsetOld: ${slideOffsetOld}")
-                Log.d("getChildAdapterPosition ", "position: ${position}")
-                Log.d("ItemDecorator ", "top: ${outRect.top}")*/
+            val top = -(view.measuredHeight - ((view.measuredHeight / 150))) * inverse
+            if (position != 0) {
+                if (parent.getChildAt(position) != null) {
+                    setMargins(
+                        parent.getChildAt(position),
+                        view.marginLeft,
+                        top.toInt(),
+                        view.marginRight,
+                        view.marginBottom
+                    )
+                }
+            }
+            Log.d("     adapter position  ", "     adapter position : ${position}")
+            Log.d("NEW", "NEW\n")
         }
     }
 

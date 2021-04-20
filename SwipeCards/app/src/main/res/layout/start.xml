@@ -46,9 +46,6 @@
     <include layout="@layout/sber_pay_payment_card_list_item"
         android:id="@+id/imageViewCenter"/>
 
-    <include layout="@layout/sber_pay_payment_card_list_item"
-        android:id="@+id/imageViewBottom"/>
-
     <View
         android:id="@+id/viewClickTargetBottom"
         android:layout_width="wrap_content"
